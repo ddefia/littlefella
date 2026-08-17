@@ -2,7 +2,7 @@ export const SITE = {
   name: "little fella",
   legal: "little fella ventures",
   short: "lfv",
-  email: "anthony@littlefella.vc",
+  email: "info@littlefella.vc",
 } as const;
 
 export const SECTORS = [
