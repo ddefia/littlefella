@@ -21,11 +21,8 @@ export function Hero() {
   return (
     <section
       id="top"
-      className="relative flex min-h-[100dvh] flex-col bg-lf-blue px-5 pb-0 pt-16 text-lf-cream md:px-8"
+      className="flex min-h-[100dvh] flex-col bg-lf-blue px-5 pb-0 pt-16 text-lf-cream md:px-8"
     >
-      <div className="pointer-events-none absolute left-5 top-[4.5rem] h-10 w-10 border-l border-t border-lf-cream/80 md:left-8" />
-      <div className="pointer-events-none absolute right-5 top-[4.5rem] h-10 w-10 border-r border-t border-lf-cream/80 md:right-8" />
-
       <div className="mx-auto grid w-full max-w-[1400px] flex-1 grid-cols-1 content-center gap-10 py-10 md:grid-cols-[minmax(0,1.2fr)_minmax(0,0.8fr)] md:items-stretch md:gap-16 md:py-8">
         <div className="flex flex-col justify-center">
           <motion.h1
