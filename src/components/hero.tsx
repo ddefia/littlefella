@@ -37,27 +37,50 @@ export function Hero() {
           >
             {SITE.name}
           </motion.h1>
-          <p className="mt-3 text-[1.15rem] font-medium lowercase tracking-[-0.03em] text-lf-cream/80 md:text-[1.35rem]">
+          <motion.p
+            className="mt-3 text-[1.15rem] font-medium lowercase tracking-[-0.03em] text-lf-cream/80 md:text-[1.35rem]"
+            initial={reduce ? false : { opacity: 0, transform: "translateY(12px)" }}
+            animate={{ opacity: 1, transform: "translateY(0px)" }}
+            transition={{ duration: 0.5, ease, delay: reduce ? 0 : 0.35 }}
+          >
             ventures
-          </p>
-          <p className="mt-8 max-w-[32ch] text-[1.02rem] font-medium leading-[1.4] tracking-[-0.02em] text-lf-cream/85">
+          </motion.p>
+          <motion.p
+            className="mt-8 max-w-[32ch] text-[1.02rem] font-medium leading-[1.4] tracking-[-0.02em] text-lf-cream/85"
+            initial={reduce ? false : { opacity: 0, transform: "translateY(12px)" }}
+            animate={{ opacity: 1, transform: "translateY(0px)" }}
+            transition={{ duration: 0.5, ease, delay: reduce ? 0 : 0.45 }}
+          >
             we get in early with strong founders, on work that will matter.
-          </p>
-          <a
+          </motion.p>
+          <motion.a
             href="#note"
             className="mt-8 inline-block w-fit text-[0.95rem] font-medium lowercase underline decoration-lf-cream/70 underline-offset-[0.28em] transition-opacity hover:opacity-70"
+            initial={reduce ? false : { opacity: 0, transform: "translateY(12px)" }}
+            animate={{ opacity: 1, transform: "translateY(0px)" }}
+            transition={{ duration: 0.5, ease, delay: reduce ? 0 : 0.55 }}
           >
             send a note
-          </a>
+          </motion.a>
         </div>
 
         <ul className="flex h-full flex-col justify-between border-t border-lf-cream/35 md:border-t-0 md:border-l md:pl-12">
-          {SECTORS.map((sector) => {
+          {SECTORS.map((sector, i) => {
             const selected = active === sector.name;
             return (
-              <li
+              <motion.li
                 key={sector.name}
                 className="border-b border-lf-cream/25 last:border-b-0"
+                initial={
+                  reduce ? false : { opacity: 0, transform: "translateY(12px)" }
+                }
+                whileInView={{ opacity: 1, transform: "translateY(0px)" }}
+                viewport={{ once: true, amount: 0.4 }}
+                transition={{
+                  duration: 0.45,
+                  ease,
+                  delay: reduce ? 0 : i * 0.05,
+                }}
               >
                 <button
                   type="button"
@@ -87,7 +110,7 @@ export function Hero() {
                     }`}
                   />
                 </button>
-              </li>
+              </motion.li>
             );
           })}
         </ul>
