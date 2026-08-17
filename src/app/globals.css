@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+@theme {
+  --color-lf-blue: #4193ff;
+  --color-lf-cream: #f3f1ec;
+  --color-lf-ink: #141414;
+  --color-lf-char: #1c1c1c;
+  --color-lf-mute: #c9c4bb;
+  --font-sans: var(--font-satoshi), ui-sans-serif, system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+html,
+body {
+  background: var(--color-lf-blue);
+  color: var(--color-lf-cream);
+}
+
+::selection {
+  background: var(--color-lf-cream);
+  color: var(--color-lf-blue);
+}
+
+:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}
+
+input,
+textarea {
+  caret-color: var(--color-lf-blue);
+}
+
+a {
+  text-underline-offset: 0.22em;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-lf-ink);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3d3d3d;
+}
